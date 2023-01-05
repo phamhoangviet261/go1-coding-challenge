@@ -34,6 +34,24 @@ fn({
 ```
 
 - [Quiz Results](./quiz-results/quiz-results.md) [[data](./quiz-results/quiz-results.data.md)]
+
+```js
+const fn = (correct, answers) => {
+    let s = {};
+    for(let a of answers.flat(Infinity)){
+        s[`${a}`] = s[`${a}`] ? s[`${a}`] + 1 : 1;
+    }
+    return Object.values(s);
+};
+fn(["A", "B", "C"], [
+    ["A", "B", "B"],
+    ["C", "B", "C"],
+    ["A", "B", "C"],
+    ["B", "B", "A"],
+    ["A", "B", "C"]
+])
+```
+
 - [Watched Courses](./watched-courses/watched-courses.md) [[data](./watched-courses/watched-courses.data.md)]
 - [Concurrent Learners](./concurrent-learners/concurrent-learners.md) [[data](./concurrent-learners/concurrent-learners.data.md)]
 
