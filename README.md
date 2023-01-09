@@ -41,7 +41,7 @@ const fn = (correct, answers) => {
     for(let a of answers.flat(Infinity)){
         s[`${a}`] = s[`${a}`] ? s[`${a}`] + 1 : 1;
     }
-    return Object.values(s);
+    return Object.values(s).indexOf(Math.max(...Object.values(s)));
 };
 fn(["A", "B", "C"], [
     ["A", "B", "B"],
